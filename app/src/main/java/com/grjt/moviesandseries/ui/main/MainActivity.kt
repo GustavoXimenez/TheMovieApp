@@ -5,15 +5,17 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.grjt.moviesandseries.*
 import com.grjt.moviesandseries.databinding.ActivityMovieBinding
-import com.grjt.moviesandseries.model.Movie
-import com.grjt.moviesandseries.model.MoviesRepository
+import com.grjt.moviesandseries.model.database.Movie
+import com.grjt.moviesandseries.model.server.MoviesRepository
+import com.grjt.moviesandseries.ui.app
 import com.grjt.moviesandseries.ui.detail.DetailActivity
 import com.grjt.moviesandseries.ui.startActivity
+import kotlinx.android.synthetic.main.activity_movie.*
 
 class MainActivity : AppCompatActivity(), MainPresenter.View {
 
-    private val presenter by lazy { MainPresenter(MoviesRepository(this)) }
-    private val adapter = MovieAdapter { presenter.onMovieClicked(it) }
+    private val presenter by lazy { MainPresenter(MoviesRepository(app)) }
+    private val adapterPopular = MovieAdapter { presenter.onMovieClicked(it) }
     private lateinit var binding: ActivityMovieBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +23,7 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         binding = ActivityMovieBinding.inflate(layoutInflater).apply {
             setContentView(root)
             presenter.onCreate(this@MainActivity)
-            recycler.adapter = adapter
+            recycler_popular.adapter = adapterPopular
         }
     }
 
@@ -38,8 +40,8 @@ class MainActivity : AppCompatActivity(), MainPresenter.View {
         binding.progress.visibility = View.GONE
     }
 
-    override fun updateData(movies: List<Movie>) {
-        adapter.movies = movies
+    override fun updateData(moviesPopular: List<Movie>) {
+        adapterPopular.movies = moviesPopular
     }
 
     override fun navigateTo(movie: Movie) {

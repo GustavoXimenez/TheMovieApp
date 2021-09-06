@@ -1,6 +1,7 @@
 package com.grjt.moviesandseries.ui.detail
 
-import com.grjt.moviesandseries.model.Movie
+import com.grjt.moviesandseries.model.database.Movie
+
 
 class DetailPresenter {
 

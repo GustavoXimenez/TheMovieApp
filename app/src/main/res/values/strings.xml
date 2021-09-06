@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MoviesAndSeries</string>
     <string name="api_key">1bb49643f80bd193b593fb82b5f88a2a</string>
+
+    <string name="str_popular">Películas Populares</string>
+    <string name="str_now">Películas de ahora</string>
 </resources>

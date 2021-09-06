@@ -2,11 +2,8 @@ package com.grjt.moviesandseries.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.text.bold
-import androidx.core.text.buildSpannedString
-import com.grjt.moviesandseries.R
 import com.grjt.moviesandseries.databinding.ActivityDetailBinding
-import com.grjt.moviesandseries.model.Movie
+import com.grjt.moviesandseries.model.database.Movie
 import com.grjt.moviesandseries.ui.loadUrl
 import java.lang.IllegalStateException
 

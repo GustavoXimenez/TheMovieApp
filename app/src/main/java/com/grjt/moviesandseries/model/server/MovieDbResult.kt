@@ -1,4 +1,4 @@
-package com.grjt.moviesandseries.model
+package com.grjt.moviesandseries.model.server
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

@@ -2,15 +2,13 @@ package com.grjt.moviesandseries.ui.main
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.grjt.moviesandseries.R
 import com.grjt.moviesandseries.databinding.ViewMovieBinding
-import com.grjt.moviesandseries.model.Movie
+import com.grjt.moviesandseries.model.database.Movie
 import com.grjt.moviesandseries.ui.basicDiffUtil
 import com.grjt.moviesandseries.ui.inflate
 import com.grjt.moviesandseries.ui.loadUrl
-import kotlin.properties.Delegates
 
 class MovieAdapter(private val listener: (Movie) -> Unit) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {

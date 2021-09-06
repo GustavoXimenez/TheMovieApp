@@ -1,4 +1,4 @@
-package com.grjt.moviesandseries.model
+package com.grjt.moviesandseries.model.server
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

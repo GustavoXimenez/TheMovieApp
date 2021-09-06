@@ -1,7 +1,7 @@
 package com.grjt.moviesandseries.ui.main
 
-import com.grjt.moviesandseries.model.Movie
-import com.grjt.moviesandseries.model.MoviesRepository
+import com.grjt.moviesandseries.model.database.Movie
+import com.grjt.moviesandseries.model.server.MoviesRepository
 import com.grjt.moviesandseries.ui.common.Scope
 import kotlinx.coroutines.launch
 
@@ -22,7 +22,7 @@ class MainPresenter(private val moviesRepository: MoviesRepository) : Scope by S
 
         launch {
             view.showProgress()
-            view.updateData(moviesRepository.findPopularMovies().results)
+            view.updateData(moviesRepository.findPopularMovies())
             view.hideProgress()
         }
 
